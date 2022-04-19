@@ -1,0 +1,36 @@
+import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import Base from './base';
+import { Role } from "./role.entity";
+import {  FamilyRefreshTokens } from './family-refresh-tokens.entity';
+
+@Entity({name:"user"})
+export class User extends Base{
+
+    @PrimaryGeneratedColumn()
+    id:number;
+
+    @Column({type:"varchar", length:30})
+    name:string;
+
+    @Column({type:"varchar", length:100})
+    lastname:string;
+    @Column({type:"varchar", length:100, unique:true})
+    email:string;
+    @Column({type:"varchar", length:100})
+    password:string;
+    
+
+    // @Column({type: 'datetime', nullable:true})
+    // dateExpirationRefreshToken: Date ;
+
+    @Column({type:"varchar", length:100})
+    photo:string;
+
+    @ManyToMany((type) => Role, (role) =>role.users)
+    @JoinTable()
+    roles:Role[]
+
+    @OneToMany(type => FamilyRefreshTokens, familiRefreshTokens => familiRefreshTokens.user, {cascade:true})
+    familyRefreshTokens: FamilyRefreshTokens[];
+}
+    

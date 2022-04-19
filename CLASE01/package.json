@@ -1,0 +1,41 @@
+{
+  "name": "clase01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": " nodemon src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1113.0",
+    "bcryptjs": "^2.4.3",
+    "date-fns": "^2.28.0",
+    "express": "^4.17.3",
+    "ioredis": "^4.28.5",
+    "jwt-simple": "^0.5.6",
+    "lodash": "^4.17.21",
+    "multer": "^1.4.4",
+    "multer-s3": "^2.10.0",
+    "mysql2": "^2.3.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.4",
+    "uuid": "^8.3.2",
+    "yenv": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express": "^4.17.13",
+    "@types/ioredis": "^4.28.10",
+    "@types/lodash": "^4.14.181",
+    "@types/multer": "^1.4.7",
+    "@types/multer-s3": "^2.7.11",
+    "@types/uuid": "^8.3.4",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "tsconfig-paths": "^3.14.1"
+  }
+}

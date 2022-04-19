@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "@bootstrap/*":["src/bootstrap/*"],
+            "@user/*":["src/user/*"],
+            "@role/*":["src/role/*"],
+            "@medic/*":["src/medic/*"],
+            "@driver/*":["src/driver/*"],
+            "@history/*":["src/history/*"],
+            "@family-refreshtokens/*":["src/family-refreshtokens/*"],
+            "@shared/*":["src/shared/*"],
+            "@entities/*":["src/entities/*"],
+            "@auth/*":["src/auth/*"],
+
+
+        }
+    }
+}
