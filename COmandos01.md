@@ -81,6 +81,7 @@ vas por la aplicacion, creas el repository
 
 # cambiar la configuracion con ts
 tsc init 
+tsc --init
 npm list -g
 
 # rutas largas 
@@ -193,3 +194,89 @@ CLAVE c5K/2FMNO0gDtDqRYTwneVf43yTXGHNDjBSkb+Gj
 # npm i aws-sdk
 npm i aws-sdk
 
+{
+  "extends": "./tsconfig.paths.json",
+  "compilerOptions": {   
+    "module": "commonjs",  // script trabajar con commonjs
+    "esModuleInterop": true, // librerias de node creadas con required, commonjs 
+    "resolveJsonModule": true,/* false data para testear con datos json. */
+    "target": "ES2020", // typescript del 2020
+    "noImplicitAny": true, // no asuma datos tipos any
+    "moduleResolution": "node", // 
+    "sourceMap": false, // depurar en js, lo transpilado, una foto dinamica del typescript 
+    "experimentalDecorators": true, // orm para que se pueda tener decoradores
+    "emitDecoratorMetadata": true, // decoradores 
+    "baseUrl": "./", // la raiz del proyecto    
+    "outDir": "./cache", // se transpila en la carpeta cache
+
+  },
+  "exclude": ["node_modules"], // no transpilar ningun archivo de esta carpeta
+  "include": ["src/**/*.ts"], // todos los archivos dentro de la carpeta src
+  "ts-node": {
+    "require": ["tsconfig-paths/register"] // manejo de rutas del typescript, lee las rutas dentro del archivo paths el register
+  }
+}
+
+{
+    "watch":["src/"], // escucha
+    "ext":"ts json",  // observando los achivos con extension
+    "env": {
+        "NODE_ENV":"development"  // verificar el entorno donde trabajo 
+    },
+    "ignore":["node_modules"], // ignore la modificacion del nodemodule
+    "execMap":{
+        "ts" : "ts-node" // cuando se modifique ejecuta ts-node
+    },
+    "verbose": true, // un poco mas de informacion de lo que sucede
+    "restartable": "rs" // si modifico el nodemon , lo ejecuto con rs 
+
+}
+
+development:
+  PORT: 3000
+  DATABASES:
+    MYSQL:
+      HOST: localhost
+      TYPE: mysql
+      PORT: 4000
+      DATABASE: nodepro
+      USERNAME: root
+      PASSWORD: root
+      SYNCHRONIZE: true 
+      ENTITIES: "src/entities/**/*.ts"
+      EXTRA_CONNECTIONS: 10
+      LOGGING: true
+    REDIS:
+      HOST: localhost
+      PORT: 6380
+      PASSWORD: todovale
+  APP: 
+    PAGE_SIZE: 5
+  TOKEN:
+    SECRECT_WORK: 6c633227-1499-40cf-9298-2435868c3ca3
+    TIME_LIVE: 30
+  S3:
+    bucketName: cursonodejs00
+    bucketPath: https://cursonodejs00.s3.amazonaws.com
+production: 
+  PORT: 80
+  DATABASES:
+    MYSQL:
+      HOST: localhost
+      TYPE: mysql
+      PORT: 4000
+      DATABASE: nodepro
+      USERNAME: root
+      PASSWORD: root
+      SYNCHRONIZE: false 
+      ENTITIES: "src/entities/**/*.ts"
+      EXTRA_CONNECTIONS: 10
+      LOGGING: false
+  APP: 
+    PAGE_SIZE: 30
+  TOKEN:
+    SECRECT_WORK: 6c633227-1499-40cf-9298-2435868c3ca3
+    TIME_LIVE: 30
+  S3:
+    bucketName: cursonodejs00
+    bucketPath: https://cursonodejs00.s3.amazonaws.com
