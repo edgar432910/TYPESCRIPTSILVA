@@ -13,7 +13,7 @@ export class DatabaseBootstrap implements IBootstrap {
                 host: env.DATABASES.MYSQL.HOST,
                 type: env.DATABASES.MYSQL.TYPE,
                 username: env.DATABASES.MYSQL.USERNAME,
-                password: env.DATABASES.MYSQL.PASSWORD,
+                password: '1234',
                 database: env.DATABASES.MYSQL.DATABASE,
                 port: env.DATABASES.MYSQL.PORT,
                 entities: [env.DATABASES.MYSQL.ENTITIES],

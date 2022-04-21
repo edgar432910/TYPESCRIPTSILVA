@@ -3,6 +3,7 @@
         "paths": {
             "@bootstrap/*":["src/bootstrap/*"],
             
+            "@familia/*":["src/familia/*"],
 
 
         }

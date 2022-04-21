@@ -6,7 +6,7 @@ export default class Base{
     fecha_actualizacion:Date;
 
     @Column({type:"boolean", default:true})
-    estado:boolean;
+    active:boolean;
 
     @BeforeInsert()
     addDateCreate(){
