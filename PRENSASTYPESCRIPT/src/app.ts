@@ -1,5 +1,6 @@
 
 import express, { Application } from 'express';
+import routeClase from './clase/adapter/clase.route';
 import routeFamilia from './familia/adapter/familia.route';
 
 
@@ -24,6 +25,7 @@ import routeFamilia from './familia/adapter/familia.route';
       
        
         this.expressApp.use("/familia", routeFamilia);
+        this.expressApp.use("/clase", routeClase);
 
         this.expressApp.get("/",(request, response) =>{
            
