@@ -4,7 +4,7 @@ import BaseProductos from "./base-productos";
 
 @Entity({name: "familia"})
 export class Familia extends BaseProductos{
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn({name:"id_familia"})
     id:number;
 
 

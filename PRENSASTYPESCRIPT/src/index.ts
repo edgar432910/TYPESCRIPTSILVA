@@ -4,7 +4,7 @@ import ServerBootstrap from "@bootstrap/server.bootstrap";
 import { DatabaseBootstrap } from "@bootstrap/database.bootstrap";
 
 const serverBootstrap = new ServerBootstrap(App);
-const databaseBootstrap = new DatabaseBootstrap;
+const databaseBootstrap = new DatabaseBootstrap();
 
 
 

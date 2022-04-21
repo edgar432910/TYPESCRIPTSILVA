@@ -1,23 +1,23 @@
 import { BeforeInsert, BeforeUpdate, Column } from 'typeorm';
 export default class Base{
     @Column({type: 'datetime'})
-    dateCreate:Date;
+    fecha_creacion:Date;
     @Column({type: 'datetime'})
-    dateUpdate:Date;
+    fecha_actualizacion:Date;
 
     @Column({type:"boolean", default:true})
-    active:boolean;
+    estado:boolean;
 
     @BeforeInsert()
     addDateCreate(){
-        this.dateCreate = new Date();
-        this.dateUpdate = new Date();
+        this.fecha_creacion = new Date();
+        this.fecha_actualizacion = new Date();
 
     }
 
     @BeforeUpdate()
     addDateUpdate(){
-        this.dateUpdate = new Date();
+        this.fecha_actualizacion = new Date();
        
     }
 }

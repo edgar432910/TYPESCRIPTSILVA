@@ -1,14 +1,12 @@
 import { Column } from 'typeorm';
 import Base from './base';
+import { User } from './usuario.entity';
 export default class BaseProductos extends Base{
     
+  
     @Column({type:"varchar", length:50})
-    name:string;
+    nombre:string;
 
-    @Column({type:"varchar", length:50})
-    maternal_surname:string;
-
-    @Column({type:"varchar", length:50})
-    paternal_surname:string;
+  
 
 }
