@@ -6,6 +6,9 @@ export class Marca {
 
     @PrimaryGeneratedColumn({name:"id_marca"})
     idMarca:number;
+
+    @Column({name:"utilidad"})
+    utilidad:number;
 }
 
 
